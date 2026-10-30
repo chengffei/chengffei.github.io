@@ -117,10 +117,23 @@
   .card .kind { margin: 4px 0 12px; font-weight: 600; color: #424245; }
   .card p { margin: 0 0 10px; color: var(--muted); font-size: 15.5px; }
   .card .meta { font-size: 13px; margin: 16px 0 0; }
-  .why { max-width: 720px; padding-top: 112px; text-align: center; }
-  .why h2 { font-size: clamp(30px, 4.4vw, 44px); letter-spacing: -.015em; margin: 0 0 40px; }
-  .why p { font-size: clamp(19px, 2.2vw, 22px); line-height: 1.6; color: var(--muted); margin: 0 0 36px; }
-  .why b { color: var(--ink); font-weight: 600; }
+  .why { padding-top: 112px; text-align: center; }
+  .why .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 40px; }
+  .why blockquote { max-width: 860px; margin: 0 auto 48px; }
+  .why blockquote p { font-size: clamp(30px, 5vw, 52px); line-height: 1.15; letter-spacing: -.02em; font-weight: 600; margin: 0; }
+  .why .sig { font-size: 15px; color: var(--muted); margin: 0; }
+  .why .dots { display: none; }
+  .why.live { height: 300vh; padding-top: 0; max-width: none; }
+  .why.live .stage { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+  .why.live .eyebrow { position: absolute; top: 16vh; left: 0; right: 0; margin: 0; }
+  .why.live blockquote { position: absolute; top: 50%; left: 24px; right: 24px; margin: 0 auto; opacity: 0; transform: translateY(-40%); transition: opacity .5s, transform .5s; }
+  .why.live blockquote.on { opacity: 1; transform: translateY(-50%); }
+  .why.live .w { color: #c7c7cc; transition: color .6s cubic-bezier(.2,.7,.2,1); }
+  .why.live blockquote.on .w { color: var(--ink); }
+  .why.live .sig { position: absolute; bottom: 16vh; left: 0; right: 0; }
+  .why.live .dots { display: flex; flex-direction: column; gap: 10px; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); }
+  .why .dots i { width: 6px; height: 6px; border-radius: 50%; background: #c7c7cc; transition: background .3s; }
+  .why .dots i.on { background: var(--ink); }
   footer { text-align: center; color: var(--muted); font-size: 14px; padding: 96px 24px 56px; }
   footer a { color: #248a3d; }
   @media (max-width: 820px) { .grid { grid-template-columns: minmax(0, 1fr); } header.wrap { padding: 56px 24px 40px; } }
@@ -159,12 +172,43 @@
   </div>
 </section>
 <section class="wrap why">
-  <h2>Why I build these.</h2>
-  <p><b>AI didn’t make software obsolete.</b><br>It made it possible for anyone to build it.<br>I’m a product manager in energy storage.<br>Clip, Leaf and Uptick each had the same first user. Me.</p>
-  <p><b>I chose open source.</b><br>Because software is worth building.<br>For me. And for everyone.</p>
-  <p><b>Open-source authors earn by creating value for others.</b><br>Paid features may come one day.<br>The free version stays. Forever.</p>
+  <div class="stage">
+    <h2 class="eyebrow">Why I build these</h2>
+    <blockquote><p>AI didn’t kill software. It let anyone build it.</p></blockquote>
+    <blockquote><p>Every app here had the same first user. Me.</p></blockquote>
+    <blockquote><p>Free stays free. Forever.</p></blockquote>
+    <p class="sig">Felix, PM by day, builder by night</p>
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+  </div>
 </section>
 </main>
 <footer>Made by <a href="https://github.com/chengffei">Felix</a> · All source code on <a href="https://github.com/chengffei">GitHub</a> · Last updated <time datetime="2026-10-30">30 October 2026</time></footer>
+<script>
+(() => {
+  const s = document.querySelector('.why');
+  if (!s || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  s.classList.add('live');
+  const qs = [...s.querySelectorAll('blockquote')], dots = [...s.querySelectorAll('.dots i')];
+  const cjk = '　-〿一-鿿＀-￯';
+  const re = new RegExp('[' + cjk + ']|[^\\s' + cjk + ']+\\s*|\\s+', 'g');
+  qs.forEach(q => {
+    const p = q.querySelector('p');
+    p.innerHTML = p.textContent.match(re).map((t, k) => '<span class="w" style="transition-delay:' + k * 60 + 'ms">' + t + '</span>').join('');
+  });
+  let cur = -1, raf = 0;
+  const tick = () => {
+    raf = 0;
+    const r = s.getBoundingClientRect();
+    const i = Math.floor(Math.min(Math.max(-r.top / (r.height - innerHeight), 0), .999) * qs.length);
+    if (i === cur) return;
+    cur = i;
+    qs.forEach((q, k) => q.classList.toggle('on', k === i));
+    dots.forEach((d, k) => d.classList.toggle('on', k === i));
+  };
+  addEventListener('scroll', () => { raf ||= requestAnimationFrame(tick); }, { passive: true });
+  addEventListener('resize', tick);
+  tick();
+})();
+</script>
 </body>
 </html>

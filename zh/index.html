@@ -117,10 +117,23 @@
   .card .kind { margin: 4px 0 12px; font-weight: 600; color: #424245; }
   .card p { margin: 0 0 10px; color: var(--muted); font-size: 15.5px; }
   .card .meta { font-size: 13px; margin: 16px 0 0; }
-  .why { max-width: 720px; padding-top: 112px; text-align: center; }
-  .why h2 { font-size: clamp(30px, 4.4vw, 44px); letter-spacing: -.015em; margin: 0 0 40px; }
-  .why p { font-size: clamp(19px, 2.2vw, 22px); line-height: 1.6; color: var(--muted); margin: 0 0 36px; }
-  .why b { color: var(--ink); font-weight: 600; }
+  .why { padding-top: 112px; text-align: center; }
+  .why .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 40px; }
+  .why blockquote { max-width: 860px; margin: 0 auto 48px; }
+  .why blockquote p { font-size: clamp(30px, 5vw, 52px); line-height: 1.15; letter-spacing: -.02em; font-weight: 600; margin: 0; }
+  .why .sig { font-size: 15px; color: var(--muted); margin: 0; }
+  .why .dots { display: none; }
+  .why.live { height: 300vh; padding-top: 0; max-width: none; }
+  .why.live .stage { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+  .why.live .eyebrow { position: absolute; top: 16vh; left: 0; right: 0; margin: 0; }
+  .why.live blockquote { position: absolute; top: 50%; left: 24px; right: 24px; margin: 0 auto; opacity: 0; transform: translateY(-40%); transition: opacity .5s, transform .5s; }
+  .why.live blockquote.on { opacity: 1; transform: translateY(-50%); }
+  .why.live .w { color: #c7c7cc; transition: color .6s cubic-bezier(.2,.7,.2,1); }
+  .why.live blockquote.on .w { color: var(--ink); }
+  .why.live .sig { position: absolute; bottom: 16vh; left: 0; right: 0; }
+  .why.live .dots { display: flex; flex-direction: column; gap: 10px; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); }
+  .why .dots i { width: 6px; height: 6px; border-radius: 50%; background: #c7c7cc; transition: background .3s; }
+  .why .dots i.on { background: var(--ink); }
   footer { text-align: center; color: var(--muted); font-size: 14px; padding: 96px 24px 56px; }
   footer a { color: #248a3d; }
   @media (max-width: 820px) { .grid { grid-template-columns: minmax(0, 1fr); } header.wrap { padding: 56px 24px 40px; } }
@@ -159,12 +172,43 @@
   </div>
 </section>
 <section class="wrap why">
-  <h2>为什么做这些。</h2>
-  <p><b>AI 没有让软件过时。</b><br>它让每个人都能做软件。<br>我是储能行业的产品经理。<br>Clip、Leaf、Uptick，第一个用户都是我自己。</p>
-  <p><b>我选择开源。</b><br>因为软件值得被做出来。<br>为了我自己，也为了每一个人。</p>
-  <p><b>开源作者，靠为别人创造价值来赚钱。</b><br>将来也许会有付费功能。<br>但免费版，永远都在。</p>
+  <div class="stage">
+    <h2 class="eyebrow">为什么做这些</h2>
+    <blockquote><p>AI 没有让软件过时，它让每个人都能做软件。</p></blockquote>
+    <blockquote><p>这里每个 App，第一个用户都是我。</p></blockquote>
+    <blockquote><p>免费的，永远免费。</p></blockquote>
+    <p class="sig">Felix，白天做产品，晚上做软件</p>
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+  </div>
 </section>
 </main>
 <footer>作者 <a href="https://github.com/chengffei">Felix</a> · 源码都在 <a href="https://github.com/chengffei">GitHub</a> · 更新于 <time datetime="2026-10-30">2026 年 10 月 30 日</time></footer>
+<script>
+(() => {
+  const s = document.querySelector('.why');
+  if (!s || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  s.classList.add('live');
+  const qs = [...s.querySelectorAll('blockquote')], dots = [...s.querySelectorAll('.dots i')];
+  const cjk = '　-〿一-鿿＀-￯';
+  const re = new RegExp('[' + cjk + ']|[^\\s' + cjk + ']+\\s*|\\s+', 'g');
+  qs.forEach(q => {
+    const p = q.querySelector('p');
+    p.innerHTML = p.textContent.match(re).map((t, k) => '<span class="w" style="transition-delay:' + k * 60 + 'ms">' + t + '</span>').join('');
+  });
+  let cur = -1, raf = 0;
+  const tick = () => {
+    raf = 0;
+    const r = s.getBoundingClientRect();
+    const i = Math.floor(Math.min(Math.max(-r.top / (r.height - innerHeight), 0), .999) * qs.length);
+    if (i === cur) return;
+    cur = i;
+    qs.forEach((q, k) => q.classList.toggle('on', k === i));
+    dots.forEach((d, k) => d.classList.toggle('on', k === i));
+  };
+  addEventListener('scroll', () => { raf ||= requestAnimationFrame(tick); }, { passive: true });
+  addEventListener('resize', tick);
+  tick();
+})();
+</script>
 </body>
 </html>
