@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chengffei.github.io/sitemap.xml
+Sitemap: https://chengffei.github.io/clip/sitemap.xml
+Sitemap: https://chengffei.github.io/leaf/sitemap.xml
+Sitemap: https://chengffei.github.io/uptick/sitemap.xml
