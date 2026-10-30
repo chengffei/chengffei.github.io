@@ -10,7 +10,7 @@
 
 ## About
 
-Felix is a product manager in the energy storage industry who builds these apps for himself first. They are open source because building software is worth doing for everyone who can use it. Some apps may add paid features later; the free version will always be available.
+Felix is a product manager in energy storage and the first user of every app here. AI didn't make software obsolete; it made it possible for anyone to build it. The apps are open source because software is worth building, for him and for everyone. Paid features may come one day; the free version stays, forever.
 
 ## Links
 
