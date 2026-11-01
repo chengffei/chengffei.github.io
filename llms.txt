@@ -8,6 +8,10 @@
 - [Leaf](https://chengffei.github.io/leaf/llms.txt): Kindle-style EPUB, MOBI and AZW3 reader with no library; double-click a book to read, close the window to quit. MIT. macOS 15 or later.
 - [Uptick](https://chengffei.github.io/uptick/llms.txt): app updater and MacUpdater successor; finds updates from the App Store, Sparkle, Electron feeds and Homebrew, verifies each download, installs it. GPL-3.0. macOS 14 or later.
 
+## Browser extensions
+
+- [Lodestone](https://github.com/chengffei/chrome-extensions/tree/main/lodestone): Chrome and Quark extension that lists magnet links and bare info hashes on a page, guesses resource names from nearby text, copies them and scrolls to them. English and Simplified Chinese. MIT.
+
 ## About
 
 Felix is a product manager in energy storage and the first user of every app here. AI didn't make software obsolete; it made it possible for anyone to build it. The apps are open source because software is worth building, for him and for everyone. Paid features may come one day; the free version stays, forever.
