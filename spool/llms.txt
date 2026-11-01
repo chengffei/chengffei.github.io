@@ -16,7 +16,7 @@ Spool has no server, no account and no analytics. It keeps the list of detected 
 - Not supported, on purpose: DRM (Widevine, PlayReady, FairPlay; detected and marked), YouTube (Chrome Web Store policy), live streams (marked), paywalls and logins
 - Permissions: webRequest on all sites, declarativeNetRequestWithHostAccess (Referer on Spool's own requests only), offscreen, downloads, storage, scripting
 - Install: not in the Chrome Web Store yet; load unpacked from the repository in developer mode
-- Version: 0.2.0, updated 2026-11-01
+- Version: 0.2.1, updated 2026-11-01
 - Merging library: Mediabunny 1.65.0 (MPL-2.0), bundled unmodified
 
 ## Links
