@@ -1,0 +1,28 @@
+# Spool
+
+> Spool is a free, open-source browser extension for Chrome and Edge (Chromium 116 or later) that finds the videos a web page loads and saves them as files: direct media files, HLS (m3u8) and DASH (mpd) streams, and bilibili videos in the best quality the user's own account allows. Streams are merged into one MP4 in the browser without re-encoding. MIT License.
+
+Spool has no server, no account and no analytics. It keeps the list of detected videos per tab in browser session storage only, and contacts only the site that serves the chosen video.
+
+## Key facts
+
+- Detection: watches network responses by content type or file extension; ignores stream segments, files under 256 KB, failed requests and YouTube; up to 40 items per tab
+- Direct files: MP4, WebM, MOV, MKV, FLV, OGV, MP3, M4A, OGG, WAV, FLAC, saved unchanged
+- HLS: master playlists with all variants, MPEG-TS or fMP4 segments, separate audio renditions, AES-128 encryption; I-frame-only renditions skipped
+- DASH: SegmentTemplate with $Number$ or SegmentTimeline, SegmentList with byte ranges, single-file representations
+- bilibili: WBI-signed playurl request from the page with the user's session (fnval=4048); qualities capped by the account (signed out 480P, signed in 1080P, membership up to 8K); Dolby Vision omitted, HDR10 offered
+- Output: one MP4 written to the extension's private storage, then saved to the Downloads folder through the browser's download manager, named after the page
+- Large files: written to disk as they download; memory use does not grow with file size
+- Not supported, on purpose: DRM (Widevine, PlayReady, FairPlay; detected and marked), YouTube (Chrome Web Store policy), live streams (marked), paywalls and logins
+- Permissions: webRequest on all sites, declarativeNetRequestWithHostAccess (Referer on Spool's own requests only), offscreen, downloads, storage, scripting
+- Install: not in the Chrome Web Store yet; load unpacked from the repository in developer mode
+- Version: 0.2.0, updated 2026-11-01
+- Merging library: Mediabunny 1.65.0 (MPL-2.0), bundled unmodified
+
+## Links
+
+- [Website](https://chengffei.github.io/spool/): overview, install steps, permissions and FAQ
+- [中文介绍页](https://chengffei.github.io/spool/zh/): Chinese version of the website
+- [Source code](https://github.com/chengffei/chrome-extensions/tree/main/spool): README, privacy policy, tests
+- [Privacy policy](https://github.com/chengffei/chrome-extensions/blob/main/spool/PRIVACY.md)
+- [Download ZIP](https://github.com/chengffei/chrome-extensions/archive/refs/heads/main.zip): unzip and load the spool folder unpacked

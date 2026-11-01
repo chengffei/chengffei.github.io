@@ -1,6 +1,6 @@
 # Free, open-source Mac apps by Felix
 
-> Three small, native, open-source macOS apps. None of them needs an account or collects data.
+> Three small, native, open-source macOS apps and two Chrome extensions. None of them needs an account or collects data.
 
 ## Apps
 
@@ -10,6 +10,7 @@
 
 ## Browser extensions
 
+- [Spool](https://chengffei.github.io/spool/llms.txt): Chrome and Edge extension that finds the videos a page loads and saves them as files: direct media, HLS (m3u8) and DASH (mpd) streams merged into one MP4 in the browser, and bilibili in the best quality the user's own account allows. Refuses DRM and YouTube. MIT.
 - [Lodestone](https://github.com/chengffei/chrome-extensions/tree/main/lodestone): Chrome and Quark extension that lists magnet links and bare info hashes on a page, guesses resource names from nearby text, copies them and scrolls to them. English and Simplified Chinese. MIT.
 
 ## About
