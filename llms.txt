@@ -4,8 +4,8 @@
 
 ## Apps
 
-- [Clip](https://chengffei.github.io/clip/llms.txt): screenshot, region recording (MP4, GIF) and on-device OCR tool, triggered by double-tapping ⌘. MIT. macOS 14 or later.
-- [Leaf](https://chengffei.github.io/leaf/llms.txt): Kindle-style EPUB, MOBI and AZW3 reader with no library; double-click a book to read, close the window to quit. MIT. macOS 15 or later.
+- [Clip](https://chengffei.github.io/clip/llms.txt): screenshot, region recording (MP4, GIF) and on-device OCR tool, triggered by double-tapping ⌘. GPL-3.0. macOS 14 or later.
+- [Leaf](https://chengffei.github.io/leaf/llms.txt): Kindle-style EPUB, MOBI and AZW3 reader with no library; double-click a book to read, close the window to quit. GPL-3.0. macOS 15 or later.
 - [Uptick](https://chengffei.github.io/uptick/llms.txt): app updater and MacUpdater successor; finds updates from the App Store, Sparkle, Electron feeds and Homebrew, verifies each download, installs it. GPL-3.0. macOS 14 or later.
 
 ## Browser extensions
