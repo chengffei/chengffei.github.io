@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Felix 的免费开源 Mac 应用：Clip、Leaf、Uptick</title>
-<meta name="description" content="免费开源的原生 Mac 应用：截图工具 Clip、电子书阅读器 Leaf、应用更新工具 Uptick，另有保存网页视频的 Chrome 插件 Spool。不用账号，不收集数据。">
+<title>Felix 的免费开源 Mac 应用：Clip、Leaf、Nib、Uptick</title>
+<meta name="description" content="免费开源的原生 Mac 应用：截图工具 Clip、电子书阅读器 Leaf、Markdown 阅读编辑器 Nib、应用更新工具 Uptick，另有保存网页视频的 Chrome 插件 Spool。不用账号，不收集数据。">
 <link rel="canonical" href="https://chengffei.github.io/zh/">
 <link rel="alternate" hreflang="en" href="https://chengffei.github.io/">
 <link rel="alternate" hreflang="zh-Hans" href="https://chengffei.github.io/zh/">
@@ -13,19 +13,19 @@
 <meta name="theme-color" content="#f5f5f7">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chengffei.github.io/zh/">
-<meta property="og:title" content="Felix 的免费开源 Mac 应用：Clip、Leaf、Uptick">
-<meta property="og:description" content="免费开源的原生 Mac 应用：截图工具 Clip、电子书阅读器 Leaf、应用更新工具 Uptick，另有保存网页视频的 Chrome 插件 Spool。不用账号，不收集数据。">
+<meta property="og:title" content="Felix 的免费开源 Mac 应用：Clip、Leaf、Nib、Uptick">
+<meta property="og:description" content="免费开源的原生 Mac 应用：截图工具 Clip、电子书阅读器 Leaf、Markdown 阅读编辑器 Nib、应用更新工具 Uptick，另有保存网页视频的 Chrome 插件 Spool。不用账号，不收集数据。">
 <meta property="og:image" content="https://chengffei.github.io/uptick/images/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Felix 的免费开源 Mac 应用：Clip、Leaf、Uptick">
-<meta name="twitter:description" content="免费开源的原生 Mac 应用：截图工具 Clip、电子书阅读器 Leaf、应用更新工具 Uptick，另有保存网页视频的 Chrome 插件 Spool。不用账号，不收集数据。">
+<meta name="twitter:title" content="Felix 的免费开源 Mac 应用：Clip、Leaf、Nib、Uptick">
+<meta name="twitter:description" content="免费开源的原生 Mac 应用：截图工具 Clip、电子书阅读器 Leaf、Markdown 阅读编辑器 Nib、应用更新工具 Uptick，另有保存网页视频的 Chrome 插件 Spool。不用账号，不收集数据。">
 <meta name="twitter:image" content="https://chengffei.github.io/uptick/images/og.png">
 <link rel="icon" type="image/png" href="../images/uptick.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Felix 的免费开源 Mac 应用：Clip、Leaf、Uptick",
+  "name": "Felix 的免费开源 Mac 应用：Clip、Leaf、Nib、Uptick",
   "inLanguage": "zh-Hans",
   "itemListElement": [
     {
@@ -71,6 +71,25 @@
       "position": 3,
       "item": {
         "@type": "SoftwareApplication",
+        "name": "Nib",
+        "url": "https://chengffei.github.io/nib/zh/",
+        "description": "打开 Markdown 就是排好版的文档。⌘E 就地编辑，手感同 Typora；存盘只写回你改过的地方。",
+        "operatingSystem": "macOS 15 or later",
+        "applicationCategory": "DeveloperApplication",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "codeRepository": "https://github.com/chengffei/nib"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "SoftwareApplication",
         "name": "Uptick",
         "url": "https://chengffei.github.io/uptick/zh/",
         "description": "找出已装 app 的更新，核对每个下载包，一键装好。",
@@ -87,7 +106,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 4,
+      "position": 5,
       "item": {
         "@type": "SoftwareApplication",
         "name": "Spool",
@@ -106,7 +125,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 5,
+      "position": 6,
       "item": {
         "@type": "SoftwareApplication",
         "name": "Lodestone",
@@ -151,7 +170,7 @@
   header.wrap { text-align: center; padding: 88px 24px 56px; }
   h1 { font-size: clamp(38px, 6.5vw, 60px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 16px; }
   .lead { font-size: clamp(18px, 2.4vw, 22px); color: var(--muted); margin: 0; }
-  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .card { display: block; background: var(--card); border-radius: 18px; padding: 32px 28px; text-align: center; }
   .card:hover h2 { text-decoration: underline; }
   .card img { margin: 0 auto 14px; display: block; }
@@ -211,6 +230,13 @@
       <p>双击 EPUB、MOBI 或 AZW3 文件就开始读。没有书库，不用账号，关窗就退出。</p>
       <p class="meta">免费 · GPL-3.0 · macOS 15 或更高</p>
     </a>
+    <a class="card" href="../nib/zh/" >
+      <img src="../images/nib.png" width="96" height="96" alt="Nib 图标">
+      <h2>Nib</h2>
+      <p class="kind">Markdown 阅读编辑器</p>
+      <p>打开 .md 就是排好版的文档。⌘E 就地编辑，手感同 Typora。存盘只写回你改过的地方。</p>
+      <p class="meta">免费 · GPL-3.0 · macOS 15 或更高</p>
+    </a>
     <a class="card" href="../uptick/zh/" >
       <img src="../images/uptick.png" width="96" height="96" alt="Uptick 图标">
       <h2>Uptick</h2>
@@ -247,7 +273,7 @@
   </div>
 </section>
 </main>
-<footer>作者 <a href="https://github.com/chengffei">Felix</a> · 源码都在 <a href="https://github.com/chengffei">GitHub</a> · 更新于 <time datetime="2026-11-01">2026 年 11 月 1 日</time></footer>
+<footer>作者 <a href="https://github.com/chengffei">Felix</a> · 源码都在 <a href="https://github.com/chengffei">GitHub</a> · 更新于 <time datetime="2026-11-25">2026 年 11 月 25 日</time></footer>
 <script>
 (() => {
   const s = document.querySelector('.why');

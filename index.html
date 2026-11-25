@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free, Open-Source Mac Apps by Felix: Clip, Leaf, Uptick</title>
-<meta name="description" content="Free, open-source Mac apps: Clip for screenshots, Leaf for ebooks, Uptick for updates. Plus Spool, a Chrome extension for saving web videos. No telemetry.">
+<title>Free, Open-Source Mac Apps by Felix: Clip, Leaf, Nib, Uptick</title>
+<meta name="description" content="Free, open-source Mac apps: Clip for screenshots, Leaf for ebooks, Nib for Markdown, Uptick for updates. Plus Spool, a Chrome extension for saving web videos. No telemetry.">
 <link rel="canonical" href="https://chengffei.github.io/">
 <link rel="alternate" hreflang="en" href="https://chengffei.github.io/">
 <link rel="alternate" hreflang="zh-Hans" href="https://chengffei.github.io/zh/">
@@ -13,19 +13,19 @@
 <meta name="theme-color" content="#f5f5f7">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chengffei.github.io/">
-<meta property="og:title" content="Free, Open-Source Mac Apps by Felix: Clip, Leaf, Uptick">
-<meta property="og:description" content="Free, open-source Mac apps: Clip for screenshots, Leaf for ebooks, Uptick for updates. Plus Spool, a Chrome extension for saving web videos. No telemetry.">
+<meta property="og:title" content="Free, Open-Source Mac Apps by Felix: Clip, Leaf, Nib, Uptick">
+<meta property="og:description" content="Free, open-source Mac apps: Clip for screenshots, Leaf for ebooks, Nib for Markdown, Uptick for updates. Plus Spool, a Chrome extension for saving web videos. No telemetry.">
 <meta property="og:image" content="https://chengffei.github.io/uptick/images/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free, Open-Source Mac Apps by Felix: Clip, Leaf, Uptick">
-<meta name="twitter:description" content="Free, open-source Mac apps: Clip for screenshots, Leaf for ebooks, Uptick for updates. Plus Spool, a Chrome extension for saving web videos. No telemetry.">
+<meta name="twitter:title" content="Free, Open-Source Mac Apps by Felix: Clip, Leaf, Nib, Uptick">
+<meta name="twitter:description" content="Free, open-source Mac apps: Clip for screenshots, Leaf for ebooks, Nib for Markdown, Uptick for updates. Plus Spool, a Chrome extension for saving web videos. No telemetry.">
 <meta name="twitter:image" content="https://chengffei.github.io/uptick/images/og.png">
 <link rel="icon" type="image/png" href="images/uptick.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Free, Open-Source Mac Apps by Felix: Clip, Leaf, Uptick",
+  "name": "Free, Open-Source Mac Apps by Felix: Clip, Leaf, Nib, Uptick",
   "inLanguage": "en",
   "itemListElement": [
     {
@@ -71,6 +71,25 @@
       "position": 3,
       "item": {
         "@type": "SoftwareApplication",
+        "name": "Nib",
+        "url": "https://chengffei.github.io/nib/",
+        "description": "Opens Markdown files rendered, like a page. Press ⌘E to edit in place, Typora-style; saves back only what you changed.",
+        "operatingSystem": "macOS 15 or later",
+        "applicationCategory": "DeveloperApplication",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "codeRepository": "https://github.com/chengffei/nib"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "SoftwareApplication",
         "name": "Uptick",
         "url": "https://chengffei.github.io/uptick/",
         "description": "Finds updates for the apps you already have, checks every download, and installs it in one click.",
@@ -87,7 +106,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 4,
+      "position": 5,
       "item": {
         "@type": "SoftwareApplication",
         "name": "Spool",
@@ -106,7 +125,7 @@
     },
     {
       "@type": "ListItem",
-      "position": 5,
+      "position": 6,
       "item": {
         "@type": "SoftwareApplication",
         "name": "Lodestone",
@@ -151,7 +170,7 @@
   header.wrap { text-align: center; padding: 88px 24px 56px; }
   h1 { font-size: clamp(38px, 6.5vw, 60px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 16px; }
   .lead { font-size: clamp(18px, 2.4vw, 22px); color: var(--muted); margin: 0; }
-  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .card { display: block; background: var(--card); border-radius: 18px; padding: 32px 28px; text-align: center; }
   .card:hover h2 { text-decoration: underline; }
   .card img { margin: 0 auto 14px; display: block; }
@@ -211,6 +230,13 @@
       <p>Double-click an EPUB, MOBI or AZW3 file to read it. No library, no account; close the window to quit.</p>
       <p class="meta">Free · GPL-3.0 · macOS 15 or later</p>
     </a>
+    <a class="card" href="nib/" >
+      <img src="images/nib.png" width="96" height="96" alt="Nib app icon">
+      <h2>Nib</h2>
+      <p class="kind">Markdown reader and editor</p>
+      <p>Opens a .md as a finished page. Press ⌘E to edit in place, Typora-style. Saves back only what you changed.</p>
+      <p class="meta">Free · GPL-3.0 · macOS 15 or later</p>
+    </a>
     <a class="card" href="uptick/" >
       <img src="images/uptick.png" width="96" height="96" alt="Uptick app icon">
       <h2>Uptick</h2>
@@ -247,7 +273,7 @@
   </div>
 </section>
 </main>
-<footer>Made by <a href="https://github.com/chengffei">Felix</a> · All source code on <a href="https://github.com/chengffei">GitHub</a> · Last updated <time datetime="2026-11-01">1 November 2026</time></footer>
+<footer>Made by <a href="https://github.com/chengffei">Felix</a> · All source code on <a href="https://github.com/chengffei">GitHub</a> · Last updated <time datetime="2026-11-25">25 November 2026</time></footer>
 <script>
 (() => {
   const s = document.querySelector('.why');
