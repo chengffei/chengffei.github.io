@@ -8,6 +8,7 @@
 - [Leaf](https://chengffei.github.io/leaf/llms.txt): Kindle-style EPUB, MOBI and AZW3 reader with no library; double-click a book to read, close the window to quit. GPL-3.0. macOS 15 or later.
 - [Nib](https://chengffei.github.io/nib/llms.txt): Markdown reader and editor that opens files rendered, edits in place Typora-style (only the current line shows syntax), saves back only the edited lines, and reloads files that agents and scripts rewrite. GPL-3.0. macOS 15 or later.
 - [Uptick](https://chengffei.github.io/uptick/llms.txt): app updater and MacUpdater successor; finds updates from the App Store, Sparkle, Electron feeds and Homebrew, verifies each download, installs it. GPL-3.0. macOS 14 or later.
+- [Rill](https://chengffei.github.io/rill/llms.txt): menu bar power monitor for MacBook; live charger, battery and Mac watts, per-app energy, memory pressure with idle apps to quit, 7-day history. GPL-3.0. macOS 26 or later.
 
 ## Browser extensions
 
